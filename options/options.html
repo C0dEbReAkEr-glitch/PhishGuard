@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhishGuard Pro - Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <div class="shield-icon">🛡️</div>
+        <h1>PhishGuard Pro</h1>
+      </div>
+      <p class="subtitle">Configure your phishing protection settings</p>
+    </header>
+
+    <main class="content">
+      <section class="settings-section">
+        <h2>Protection Settings</h2>
+        
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>Enable Real-time Protection</h3>
+            <p>Automatically analyze websites as you visit them</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="enableProtection" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>Show Notifications</h3>
+            <p>Display popup notifications for detected threats</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="showNotifications" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>Strict Mode</h3>
+            <p>Use more aggressive detection algorithms</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="strictMode">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Custom Lists</h2>
+        
+        <div class="list-container">
+          <div class="list-section">
+            <h3>Whitelist (Trusted Sites)</h3>
+            <div class="list-input">
+              <input type="text" id="whitelistInput" placeholder="Enter domain (e.g., example.com)">
+              <button class="add-btn" id="addWhitelist">Add</button>
+            </div>
+            <div class="list-items" id="whitelistItems">
+              <!-- Dynamic content -->
+            </div>
+          </div>
+
+          <div class="list-section">
+            <h3>Blacklist (Blocked Sites)</h3>
+            <div class="list-input">
+              <input type="text" id="blacklistInput" placeholder="Enter domain (e.g., phishing-site.com)">
+              <button class="add-btn" id="addBlacklist">Add</button>
+            </div>
+            <div class="list-items" id="blacklistItems">
+              <!-- Dynamic content -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Statistics</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">🛡️</div>
+            <div class="stat-info">
+              <div class="stat-value" id="sitesAnalyzed">0</div>
+              <div class="stat-label">Sites Analyzed</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🚫</div>
+            <div class="stat-info">
+              <div class="stat-value" id="threatsBlocked">0</div>
+              <div class="stat-label">Threats Blocked</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📊</div>
+            <div class="stat-info">
+              <div class="stat-value" id="protectionRate">0%</div>
+              <div class="stat-label">Protection Rate</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>About</h2>
+        <div class="about-info">
+          <p><strong>Version:</strong> 1.0.0</p>
+          <p><strong>Developer:</strong> PhishGuard Team</p>
+          <p><strong>Last Updated:</strong> <span id="lastUpdated">January 2025</span></p>
+        </div>
+        
+        <div class="actions">
+          <button class="btn btn-secondary" id="exportSettings">Export Settings</button>
+          <button class="btn btn-secondary" id="importSettings">Import Settings</button>
+          <button class="btn btn-danger" id="resetSettings">Reset to Defaults</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 PhishGuard Pro. Protecting users from phishing attacks.</p>
+    </footer>
+  </div>
+
+  <input type="file" id="importFile" accept=".json" style="display: none;">
+  <script src="options.js"></script>
+</body>
+</html>

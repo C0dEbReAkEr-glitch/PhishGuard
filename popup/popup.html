@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhishGuard Pro</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <div class="logo">
+        <div class="shield-icon">🛡️</div>
+        <h1>PhishGuard Pro</h1>
+      </div>
+    </header>
+
+    <main class="popup-content">
+      <div class="loading-state" id="loading">
+        <div class="spinner"></div>
+        <p>Analyzing current site...</p>
+      </div>
+
+      <div class="analysis-result hidden" id="result">
+        <div class="site-status" id="siteStatus">
+          <div class="status-icon" id="statusIcon">🔍</div>
+          <div class="status-info">
+            <h2 id="statusTitle">Analyzing...</h2>
+            <p class="domain" id="domainName">example.com</p>
+          </div>
+        </div>
+
+        <div class="security-metrics">
+          <div class="metric">
+            <span class="metric-label">Risk Score</span>
+            <div class="metric-bar">
+              <div class="metric-fill" id="riskBar"></div>
+            </div>
+            <span class="metric-value" id="riskScore">0%</span>
+          </div>
+
+          <div class="security-features">
+            <div class="feature" id="sslFeature">
+              <span class="feature-icon">🔒</span>
+              <span class="feature-text">SSL Certificate</span>
+              <span class="feature-status" id="sslStatus">Unknown</span>
+            </div>
+            
+            <div class="feature">
+              <span class="feature-icon">📅</span>
+              <span class="feature-text">Domain Age</span>
+              <span class="feature-status" id="domainAge">Unknown</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis-details" id="analysisDetails">
+          <h3>Detection Factors</h3>
+          <ul id="reasonsList"></ul>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-secondary" id="reportBtn">
+            <span>📋</span>
+            Report Issue
+          </button>
+          <button class="btn btn-primary" id="whitelistBtn">
+            <span>✅</span>
+            Add to Whitelist
+          </button>
+        </div>
+      </div>
+
+      <div class="error-state hidden" id="error">
+        <div class="error-icon">⚠️</div>
+        <h2>Analysis Error</h2>
+        <p id="errorMessage">Unable to analyze the current page.</p>
+        <button class="btn btn-primary" id="retryBtn">Try Again</button>
+      </div>
+    </main>
+
+    <footer class="popup-footer">
+      <button class="settings-btn" id="settingsBtn">
+        <span>⚙️</span>
+        Settings
+      </button>
+      <div class="stats">
+        <span>🛡️ Protected since install</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
